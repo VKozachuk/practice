@@ -1,0 +1,15 @@
+C:\Users\vasyl\OneDrive\Documents\GitHub\practice\minesweeper\bin\Debug\net7.0\minesweeper.exe
+C:\Users\vasyl\OneDrive\Documents\GitHub\practice\minesweeper\bin\Debug\net7.0\minesweeper.deps.json
+C:\Users\vasyl\OneDrive\Documents\GitHub\practice\minesweeper\bin\Debug\net7.0\minesweeper.runtimeconfig.json
+C:\Users\vasyl\OneDrive\Documents\GitHub\practice\minesweeper\bin\Debug\net7.0\minesweeper.dll
+C:\Users\vasyl\OneDrive\Documents\GitHub\practice\minesweeper\bin\Debug\net7.0\minesweeper.pdb
+C:\Users\vasyl\OneDrive\Documents\GitHub\practice\minesweeper\obj\Debug\net7.0\minesweeper.csproj.AssemblyReference.cache
+C:\Users\vasyl\OneDrive\Documents\GitHub\practice\minesweeper\obj\Debug\net7.0\minesweeper.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vasyl\OneDrive\Documents\GitHub\practice\minesweeper\obj\Debug\net7.0\minesweeper.AssemblyInfoInputs.cache
+C:\Users\vasyl\OneDrive\Documents\GitHub\practice\minesweeper\obj\Debug\net7.0\minesweeper.AssemblyInfo.cs
+C:\Users\vasyl\OneDrive\Documents\GitHub\practice\minesweeper\obj\Debug\net7.0\minesweeper.csproj.CoreCompileInputs.cache
+C:\Users\vasyl\OneDrive\Documents\GitHub\practice\minesweeper\obj\Debug\net7.0\minesweeper.dll
+C:\Users\vasyl\OneDrive\Documents\GitHub\practice\minesweeper\obj\Debug\net7.0\refint\minesweeper.dll
+C:\Users\vasyl\OneDrive\Documents\GitHub\practice\minesweeper\obj\Debug\net7.0\minesweeper.pdb
+C:\Users\vasyl\OneDrive\Documents\GitHub\practice\minesweeper\obj\Debug\net7.0\minesweeper.genruntimeconfig.cache
+C:\Users\vasyl\OneDrive\Documents\GitHub\practice\minesweeper\obj\Debug\net7.0\ref\minesweeper.dll
