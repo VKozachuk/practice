@@ -6,13 +6,70 @@ internal class Program
     {
         // розмір поля
         Console.Write("Enter field size: ");
-        int fieldSize = Convert.ToInt32(Console.ReadLine());
+        int fieldSize;
+        while (!int.TryParse(Console.ReadLine(), out fieldSize))
+        {
+            Console.Clear();
+            Console.WriteLine("Invalid input. Please enter a positive integer.");
+            Console.Write("Enter field size: ");
+        }
 
         // кількість мін на полі
         Console.Write("Enter the number of mines: ");
-        int numMines = Convert.ToInt32(Console.ReadLine());
+        int numMines;
+        while (!int.TryParse(Console.ReadLine(), out numMines))
+        {
+            Console.Clear();
+            Console.WriteLine("Invalid input. Please enter a positive integer.");
+            Console.Write("Enter the number of mines: ");
+        }
 
-        // створення і заповнення поля мінами
+        // виклик функції для перевірки значень, створення - відображення ігрового поля, а також виходу з гри або рестарт
+        CheckingValues(fieldSize,numMines);
+        bool[,] field = CreateField(fieldSize, numMines);
+        DisplayField(field);
+        EndGame();
+    }
+
+    // перевірка введених значень
+    private static void CheckingValues(int fieldSize, int numMines)
+    {
+        if(fieldSize <= 0 || numMines <= 0)
+        {
+            Console.Clear();
+            Console.WriteLine("Invalid input. Please enter a positive number" + "\n");
+            Console.ReadLine();
+            Console.Clear();
+            Main(new string[] { });
+            return;
+        }
+            
+        else if(numMines >= fieldSize * fieldSize)
+        {
+            Console.Clear();
+            Console.WriteLine("Invalid input. The number of mines cannot be greater than the total number of cells on the field" + "\n");
+            Console.ReadLine();
+            Console.Clear();
+            Main(new string[] { });
+            return;
+        }
+            
+        else if(fieldSize < 4)
+        {
+            Console.Clear();
+            Console.WriteLine("Invalid input. The field size must be a square with at least 4 cells" + "\n");
+            Console.ReadLine();
+            Console.Clear();
+            Main(new string[] { });
+            return;
+        }
+        
+        Console.Clear();
+    }
+        
+    // створення поля і заповнення поля мінами
+    private static bool[,] CreateField(int fieldSize, int numMines)
+    {
         int rows = fieldSize;
         int cols = fieldSize;
         bool[,] field = new bool[rows, cols];
@@ -30,7 +87,15 @@ internal class Program
             }
         }
 
-        // відображення поля
+        return field;
+    }
+
+    // відображення поля
+    private static void DisplayField(bool[,] field)
+    {
+        int rows = field.GetLength(0);
+        int cols = field.GetLength(1);
+
         Console.Write("   ");
         for (int j = 0; j < cols; j++)
         {
@@ -50,7 +115,7 @@ internal class Program
             Console.Write(i + "| ");
             for (int j = 0; j < cols; j++)
             {
-                Console.Write(field[i, j] ? "* " : "-" + " ");
+                Console.Write(field[i, j] ? "*" + " " : "-" + " ");
             }
             Console.WriteLine("|");
         }
@@ -61,8 +126,33 @@ internal class Program
             Console.Write("--");
         }
         Console.WriteLine();
+    }
 
-        Console.WriteLine("Press any key to exit");
-        Console.ReadLine();
+    // вихід з гри або рестарт
+    private static void EndGame()
+    {
+        while (true)
+        {
+            Console.Write("Press q to exit or r to restart: ");
+            ConsoleKeyInfo keyInfo = Console.ReadKey();
+            
+            if (keyInfo.KeyChar == 'q')
+            {
+                return;
+            }
+            
+            else if (keyInfo.KeyChar == 'r')
+            {
+                Console.Clear();
+                Main(new string[] { });
+                return;
+            }
+            
+            else
+            {
+                Console.Clear();
+                Console.WriteLine("Invalid input. Please enter q or r.");
+            }
+        }
     }
 }
