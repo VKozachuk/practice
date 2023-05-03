@@ -53,16 +53,6 @@ internal class Program
             Main(new string[] { });
             return;
         }
-            
-        else if(fieldSize < 4)
-        {
-            Console.Clear();
-            Console.WriteLine("Invalid input. The field size must be a square with at least 4 cells" + "\n");
-            Console.ReadLine();
-            Console.Clear();
-            Main(new string[] { });
-            return;
-        }
         
         Console.Clear();
     }
