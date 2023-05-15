@@ -4,6 +4,8 @@ internal class Program
 {
     private static void Main(string[] args)
     {
+        Console.Clear();
+
         // розмір поля
         Console.Write("Enter field size: ");
         int fieldSize;
@@ -25,7 +27,7 @@ internal class Program
         }
 
         // виклик функції для перевірки значень, створення - відображення ігрового поля, а також виходу з гри або рестарт
-        CheckingValues(fieldSize,numMines);
+        CheckingValues(fieldSize, numMines);
         bool[,] field = CreateField(fieldSize, numMines);
         DisplayField(field);
         EndGame();
@@ -34,51 +36,69 @@ internal class Program
     // перевірка введених значень
     private static void CheckingValues(int fieldSize, int numMines)
     {
-        if(fieldSize <= 0 || numMines <= 0)
+        if (fieldSize <= 0 || numMines <= 0)
         {
             Console.Clear();
-            Console.WriteLine("Invalid input. Please enter a positive number" + "\n");
+            Console.WriteLine("Invalid input. Please enter a positive number." + "\n");
             Console.ReadLine();
             Console.Clear();
             Main(new string[] { });
             return;
         }
-            
-        else if(numMines >= fieldSize * fieldSize)
+
+        else if (numMines >= fieldSize * fieldSize)
         {
             Console.Clear();
-            Console.WriteLine("Invalid input. The number of mines cannot be greater than the total number of cells on the field" + "\n");
+            Console.WriteLine("Invalid input. The number of mines cannot be greater than the total number of cells on the field.");
+            Console.WriteLine("Press any key to continue");
             Console.ReadLine();
             Console.Clear();
             Main(new string[] { });
             return;
         }
-        
+
         Console.Clear();
     }
-        
+
     // створення поля і заповнення поля мінами
     private static bool[,] CreateField(int fieldSize, int numMines)
     {
+        int iterations = 0;
         int rows = fieldSize;
         int cols = fieldSize;
         bool[,] field = new bool[rows, cols];
         Random rand = new Random();
 
-        while (numMines > 0)
-        {
-            int row = rand.Next(0, rows);
-            int col = rand.Next(0, cols);
+        List<(int, int)> positions = new List<(int, int)>();
 
-            if (!field[row, col])
+        // додавання усіх позицій у список
+        for (int i = 0; i < rows; i++)
+        {
+            for (int j = 0; j < cols; j++)
             {
-                field[row, col] = true;
-                numMines--;
+                positions.Add((i, j));
             }
         }
 
+        // розставлення мін на полі
+        while (numMines > 0 && positions.Count > 0)
+        {
+            int index = rand.Next(positions.Count);
+            int row = positions[index].Item1;
+            int col = positions[index].Item2;
+            iterations++;
+
+            field[row, col] = true;
+            positions.RemoveAt(index);
+            numMines--;
+        }
+
+        Console.WriteLine("The number of iterations = " + iterations);
+
         return field;
     }
+
+
 
     // відображення поля
     private static void DisplayField(bool[,] field)
@@ -105,7 +125,7 @@ internal class Program
             Console.Write(i + "| ");
             for (int j = 0; j < cols; j++)
             {
-                Console.Write(field[i, j] ? "*" + " " : "-" + " ");
+                Console.Write(field[i, j] ? "X" + " " : "-" + " ");
             }
             Console.WriteLine("|");
         }
@@ -125,19 +145,20 @@ internal class Program
         {
             Console.Write("Press q to exit or r to restart: ");
             ConsoleKeyInfo keyInfo = Console.ReadKey();
-            
+
             if (keyInfo.KeyChar == 'q')
             {
+                Console.Clear();
                 return;
             }
-            
+
             else if (keyInfo.KeyChar == 'r')
             {
                 Console.Clear();
                 Main(new string[] { });
                 return;
             }
-            
+
             else
             {
                 Console.Clear();
