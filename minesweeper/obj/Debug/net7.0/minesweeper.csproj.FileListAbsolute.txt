@@ -13,3 +13,6 @@ C:\Users\vasyl\OneDrive\Documents\GitHub\practice\minesweeper\obj\Debug\net7.0\r
 C:\Users\vasyl\OneDrive\Documents\GitHub\practice\minesweeper\obj\Debug\net7.0\minesweeper.pdb
 C:\Users\vasyl\OneDrive\Documents\GitHub\practice\minesweeper\obj\Debug\net7.0\minesweeper.genruntimeconfig.cache
 C:\Users\vasyl\OneDrive\Documents\GitHub\practice\minesweeper\obj\Debug\net7.0\ref\minesweeper.dll
+C:\Users\vasyl\OneDrive\Documents\GitHub\practice\minesweeper\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\Users\vasyl\OneDrive\Documents\GitHub\practice\minesweeper\bin\Debug\net7.0\Telegram.Bot.dll
+C:\Users\vasyl\OneDrive\Documents\GitHub\practice\minesweeper\obj\Debug\net7.0\minesweeper.csproj.CopyComplete

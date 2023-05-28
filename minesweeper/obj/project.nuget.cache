@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "RnmllZMntO2x1sz31BtBpzoOtcY1TpJFbcTnzSyo2D9CkfeCG2ZBUFRVlSBfsMdyrlxz3wz/gkcNwA6ef0WlhQ==",
+  "dgSpecHash": "kRTI+TSpOSfd0MLoVaOzSwtzZU73olUObdhP1SU34QwTBRKhLiRmIEA9wpIu2qJcJoLcnnqIv6qdOq1k8dtLyQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\vasyl\\OneDrive\\Documents\\GitHub\\practice\\minesweeper\\minesweeper.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\vasyl\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\vasyl\\.nuget\\packages\\telegram.bot\\19.0.0\\telegram.bot.19.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
